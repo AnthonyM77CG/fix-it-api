@@ -121,6 +121,7 @@ public class AutenticacionController {
                                 .nombre(usuario.getNombre())
                                 .apellido(usuario.getApellido())
                                 .correo(usuario.getCorreo())
+                                .celular(usuario.getCelular())
                                 .rol(usuario.getRole().getNombre())
                                 .area(usuario.getArea().getNombre())
                                 .build());
@@ -167,6 +168,7 @@ public class AutenticacionController {
                                         .nombre(usuario.getNombre())
                                         .apellido(usuario.getApellido())
                                         .correo(usuario.getCorreo())
+                                        .celular(usuario.getCelular())
                                         .rol(usuario.getRole().getNombre())
                                         .area(usuario.getArea().getNombre())
                                         .similitud(String.format("%.1f%%", resultado.similitud()))

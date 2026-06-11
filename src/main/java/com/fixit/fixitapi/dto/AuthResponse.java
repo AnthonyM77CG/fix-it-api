@@ -9,6 +9,7 @@ public class AuthResponse {
     private String token;
     private String nombre;
     private String apellido;
+    private String celular;
     private String correo;
     private String rol;
     private String area;

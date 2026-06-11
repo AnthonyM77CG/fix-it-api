@@ -8,6 +8,7 @@ import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.rekognition.RekognitionClient;
+import software.amazon.awssdk.services.s3.S3Client;
 
 @Configuration
 public class AwsConfig {
@@ -20,6 +21,12 @@ public class AwsConfig {
     @Value("${aws.region}")
     private String region;
 
+    @Value("${aws.s3.bucket}")
+    private String s3Bucket;
+
+    @Value("${aws.s3.region}")
+    private String s3Region;
+
     @Bean
     public RekognitionClient rekognitionClient() {
         AwsBasicCredentials credentials = AwsBasicCredentials.create(accessKey, secretKey);
@@ -27,6 +34,15 @@ public class AwsConfig {
         return RekognitionClient.builder()
                 .region(Region.of(region))
                 .credentialsProvider(StaticCredentialsProvider.create(credentials))
+                .build();
+    }
+
+    @Bean
+    public S3Client s3Client() {
+        return S3Client.builder()
+                .region(Region.of(s3Region))
+                .credentialsProvider(StaticCredentialsProvider.create(
+                        AwsBasicCredentials.create(accessKey, secretKey)))
                 .build();
     }
 }

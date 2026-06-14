@@ -16,5 +16,4 @@ public class IncidenciaRequest {
     private String prioridad;
     private String detalle;
     private List<String> imagenesBase64;
-    private Long areaId;
 }

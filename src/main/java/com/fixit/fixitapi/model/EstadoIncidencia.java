@@ -17,5 +17,5 @@ public class EstadoIncidencia {
     private Long id;
 
     @Column(nullable = false, unique = true)
-    private String nombre; // PENDIENTE, EN_PROCESO, EN_REVISION, RESUELTO
+    private String nombre;
 }

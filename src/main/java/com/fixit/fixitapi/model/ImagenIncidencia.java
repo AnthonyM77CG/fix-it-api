@@ -24,6 +24,10 @@ public class ImagenIncidencia {
     @JoinColumn(name = "incidencia_id", nullable = false)
     private Incidencia incidencia;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "seguimiento_id", nullable = true)
+    private SeguimientoIncidencia seguimiento;
+
     @Column(name = "url", nullable = false)
     private String url;
 }

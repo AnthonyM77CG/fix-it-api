@@ -14,7 +14,7 @@ import com.fixit.fixitapi.service.SeguimientoIncidenciaService;
 
 @RestController
 @RequestMapping
-public class SeguimientoController {
+public class SeguimientoIncidenciaController {
     private SeguimientoIncidenciaService seguimientoService;
 
     @GetMapping("/{id}/historial")

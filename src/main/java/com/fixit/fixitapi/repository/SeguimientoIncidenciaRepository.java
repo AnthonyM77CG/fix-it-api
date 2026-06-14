@@ -9,4 +9,6 @@ import com.fixit.fixitapi.model.SeguimientoIncidencia;
 
 public interface SeguimientoIncidenciaRepository extends JpaRepository<SeguimientoIncidencia, Long> {
     List<SeguimientoIncidencia> findByIncidenciaOrderByFechaAsc(Incidencia incidencia);
+
+    List<SeguimientoIncidencia> findByIncidenciaIdOrderByFechaAsc(Long incidenciaId);
 }
